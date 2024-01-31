@@ -5,7 +5,9 @@ import Footer from "./Footer";
 export default function Layout() {
   return (
     <div>
-      <Header />
+      <div className="bg-gradient-to-b from-primary to-secondary sticky top-0">
+        <Header />
+      </div>
       <Outlet />
       <Footer />
     </div>
