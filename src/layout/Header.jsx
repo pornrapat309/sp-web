@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { BsCart } from "react-icons/bs";
 import { SiShopee } from "react-icons/si";
-import Searchbar from "../features/Searchbar";
+import SearchInput from "../features/SearchInput";
+import SearchList from "../components/SearchList";
 
 export default function Header() {
+  const [searchInput, setSearchInput] = useState("");
+
   return (
     <header className="flex flex-col justify-evenly w-[80vw] mx-auto min-h-[20vh]">
       <div className="flex justify-end gap-2">
@@ -16,7 +20,14 @@ export default function Header() {
           <SiShopee className="w-12 h-12 text-white" />
           <div className="text-3xl text-white">Shipee</div>
         </div>
-        <Searchbar />
+        <div className="">
+          <SearchInput
+            placeholder="ลูกค้าใหม่รับเลย โค้ดส่วนลด หรือ โค้ดส่งฟรี*"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
+          <SearchList searchInput={searchInput} />
+        </div>
         <BsCart className="text-white w-6 h-6" />
       </div>
     </header>

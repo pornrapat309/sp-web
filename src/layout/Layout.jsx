@@ -9,7 +9,9 @@ export default function Layout() {
         <Header />
       </div>
       <Outlet />
-      <Footer />
+      <div className="bg-gray-100">
+        <Footer />
+      </div>
     </div>
   );
 }
