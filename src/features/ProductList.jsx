@@ -1,9 +1,9 @@
 import ProductItem from "./ProductItem";
 
-export default function ProductList() {
+export default function ProductList({ allProducts }) {
   return (
-    <div className="flex justify-evenly flex-wrap">
-      <ProductItem />
+    <div>
+      <ProductItem allProducts={allProducts} />
     </div>
   );
 }
